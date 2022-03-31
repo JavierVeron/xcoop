@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "513bd641-1f33-4c36-ab9c-fa2c88fc85e9",
+		"name": "XCOOP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Buscar Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coder-javier.000webhostapp.com/api/cliente/1",
+							"protocol": "https",
+							"host": [
+								"coder-javier",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"cliente",
+								"1"
+							]
+						},
+						"description": "Busca un Cliente por Código de Cliente ($id)"
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Juan Pérez\",\r\n    \"email\":\"jperez@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://coder-javier.000webhostapp.com/api/cliente/registrar",
+							"protocol": "https",
+							"host": [
+								"coder-javier",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"cliente",
+								"registrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"John Perez\",\r\n    \"email\":\"johnperez@gmail.com\",\r\n    \"activo\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://coder-javier.000webhostapp.com/api/cliente/2",
+							"protocol": "https",
+							"host": [
+								"coder-javier",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"cliente",
+								"2"
+							]
+						},
+						"description": "Actualiza los datos del Cliente. Solo funciona en local, porque en el ambiente remoto (gratuito) no está habilitado el Método PUT."
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://coder-javier.000webhostapp.com/api/cliente/2",
+							"protocol": "https",
+							"host": [
+								"coder-javier",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"cliente",
+								"2"
+							]
+						},
+						"description": "Elimina un Cliente y también los Cupones pertenecientes al mismo."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vouchers",
+			"item": [
+				{
+					"name": "Generar Voucher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\":\"Hamburguesas X 2\",\r\n    \"descripcion\":\"Almuerzo o cena para dos personas\",\r\n    \"imagen\":\"hamburguesas.jpg\",\r\n    \"cliente_id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://coder-javier.000webhostapp.com/api/voucher/crear",
+							"protocol": "https",
+							"host": [
+								"coder-javier",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"voucher",
+								"crear"
+							]
+						},
+						"description": "Crea un Voucher para un Cliente, en los datos enviados por JSON hay que especificar el ID de Cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Voucher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coder-javier.000webhostapp.com/api/voucher/0z164y",
+							"protocol": "https",
+							"host": [
+								"coder-javier",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"voucher",
+								"0z164y"
+							]
+						},
+						"description": "Busca un Voucher por Código de Voucher (valor string de 6 dígitos)"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Voucher de Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coder-javier.000webhostapp.com/api/vouchers/2",
+							"protocol": "https",
+							"host": [
+								"coder-javier",
+								"000webhostapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"vouchers",
+								"2"
+							]
+						},
+						"description": "Buscar todos los Vouchers pertenecientes al ID de Cliente."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
